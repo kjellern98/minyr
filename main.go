@@ -19,11 +19,11 @@ func main() {
 	choice := presentOptions()
 
 	switch choice {
-	case "convert":
+	case "convert", "c", "C":
 		if err := handleConvertOption(); err != nil {
 			log.Fatal(err)
 		}
-	case "average":
+	case "average", "a", "A":
 		if err := handleAverageOption(); err != nil {
 			log.Fatal(err)
 		}
@@ -42,8 +42,8 @@ func presentOptions() string {
 	fmt.Println("*                                             *")
 	fmt.Println("***********************************************")
 	fmt.Println("Please select an option:")
-	fmt.Println("Type 'convert' to convert create a new file with temperatures in Fahrenheit.")
-	fmt.Println("Type 'average' to calculate the average temperature from the files.")
+	fmt.Println("Type 'c' or 'convert' to convert create a new file with temperatures in Fahrenheit.")
+	fmt.Println("Type 'a' or 'average' to calculate the average temperature from the files.")
 	fmt.Println("Type 'exit' to exit the program.")
 
 	reader := bufio.NewReader(os.Stdin)
